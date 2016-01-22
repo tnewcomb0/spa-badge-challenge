@@ -2,7 +2,7 @@
 
 Mr. Merriwether is opening up a competitor bootcamp and wants to hire DBC students to make another version of BootBadge.
 
-Here's the (old version of)BootBadge: http://bootbadge.herokuapp.com/cohorts/63
+Here's the (old version of) BootBadge: http://bootbadge.herokuapp.com/cohorts/63
 
 TodoMVC has helpful tips for patterns you could use in your app: https://github.com/tastejs/todomvc/tree/gh-pages/examples/vanillajs
 
@@ -23,7 +23,7 @@ Rules
 - Frameworks and libraries such as Angular and React are banned
 - There's an ban exception for templating libraries such as [Handlebars] (http://tutorialzine.com/2015/01/learn-handlebars-in-10-minutes/)
 - All page navigation must be done through JS routing (see Considerations section)
-- Data should be persisted on a Rails API backend. Your Rails app should not serve / have any erb or haml files
+- Data should be persisted on a [Rails API backend](http://apionrails.icalialabs.com/book/frontmatter). Your Rails app should not serve / have any erb or haml files
 - All DOM manipulation should take place on the client
 
 Considerations
