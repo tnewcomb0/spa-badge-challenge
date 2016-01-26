@@ -23,7 +23,7 @@ Rules
 - Frameworks and libraries such as Angular and React are banned
 - There's an ban exception for templating libraries such as [Handlebars] (http://tutorialzine.com/2015/01/learn-handlebars-in-10-minutes/)
 - All page navigation must be done through JS routing (see Considerations section)
-- Data should be persisted on a [Rails API backend](http://apionrails.icalialabs.com/book/frontmatter). Your Rails app should not serve / have any erb or haml files
+- Data should be persisted on a [Rails API backend](http://apionrails.icalialabs.com/book/frontmatter). Your Rails app should not serve / have any erb or haml files. [Lecture repo](https://github.com/sf-island-foxes-2016/rails-api-lecture)
 - All DOM manipulation should take place on the client
 
 Considerations
