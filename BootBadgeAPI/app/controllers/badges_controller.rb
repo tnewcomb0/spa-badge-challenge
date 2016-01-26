@@ -2,7 +2,7 @@ class BadgesController < ApplicationController
   def index
     person = find_person(params[:person])
     badges = person.badges
-    render :json => badges
+    render :json => person, :include => :badges
   end
 
   def create
