@@ -15,17 +15,26 @@ function reRenderBadges(response) {
   // show all the badges
   var allBadges = JSON.parse(response).badges
   for(var i = 0; i < allBadges.length; i++) {
+    console.log(allBadges[i].id);
+  }
+  var up_index = 0;
+  var down_index = 1;
+  for(var i = 0; i < allBadges.length; i++) {
     var theTemplateScript = $.select("#badge-template").innerHTML;
     var theTemplate = Handlebars.compile(theTemplateScript);
     var context={
       "index": i + 1,
+      "up_index": up_index,
+      "down_index": down_index,
       "title": allBadges[i].title,
       "points": allBadges[i].points,
       "badge_id": allBadges[i].id
     };
+    up_index += 2;
+    down_index += 2;
     var theCompiledHtml = theTemplate(context);
     $.select('.container')[0].innerHTML += theCompiledHtml;
-  }
+  } // end for loop
 
   // show the add badge thing and nav
   var theTemplateScript = $.select("#badge-add-template").innerHTML;
@@ -66,31 +75,30 @@ var getPersonBadges = function() {
   });
 }; // end getPersonBadges
 
-function addUpVote() {
-  alert("1");
-  form = document.forms["up_vote"];
+function addUpVote(index) {
+  form = document.forms[index];
   vote_type = "up";
   badge_id = form.elements["slogan_id"].value;
-  alert("2");
+  console.log("up badge_id: " + form.elements["slogan_id"].value);
+  console.log("up index: " + index);
   $.ajax({
    url: 'http://localhost:3000/badges/vote',
    type: 'POST',
    data: "badge_id=" + badge_id + "&vote_type=" + vote_type
   }).then(function(response) {
-    alert("3");
     reRenderBadges(response);
   }).catch(function(error) {
-    alert("4");
     console.log(error);
   });
-  alert("5");
   return false;
 }; // end addUpVote
 
-function addDownVote() {
-  form = document.forms["down_vote"];
+function addDownVote(index) {
+  form = document.forms[index];
   vote_type = "down";
   badge_id = form.elements["slogan_id"].value;
+  console.log("down badge_id: " + badge_id);
+  console.log("down index: " + index);
   $.ajax({
    url: 'http://localhost:3000/badges/vote',
    type: 'POST',

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" type="text/css" href="css/main.css">
-  <script src="js/miniquery.js"></script>
+  <script src="js/miniquery.js"></script>f
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
   <script id="header-template" type="text/x-handlebars-template">
     <div class='logo'>
@@ -15,7 +15,7 @@
     <div id="{{badge_id}}" class="slogan">
       <div class="body">{{index}}) {{title}}</div>
       <div class="vote-on">
-        <form class="up_vote" onsubmit="return addUpVote()">
+        <form class="up_vote" onsubmit="return addUpVote({{up_index}})">
           <input type="hidden" name="slogan_id" value="{{badge_id}}">
           <input type="hidden" name="vote_type" value="up">
           <button class="up" type="submit" name="submit">
@@ -24,7 +24,7 @@
         </form>
       </div>
       <div class="vote-on">
-        <form class="down_vote" onsubmit="return addDownVote()">
+        <form class="down_vote" onsubmit="return addDownVote({{down_index}})">
           <input type="hidden" name="slogan_id" value="{{badge_id}}">
           <input type="hidden" name="vote_type" value="down">
           <button class="down" type="submit" name="submit">
