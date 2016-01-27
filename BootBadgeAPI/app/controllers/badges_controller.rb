@@ -11,7 +11,9 @@ class BadgesController < ApplicationController
     render :json => person, :include => :badges
   end
 
-  def update
+  def vote
+    p params.inspect
+    render :text => "voted"
   end
 
   private

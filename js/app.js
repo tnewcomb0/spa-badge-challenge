@@ -36,7 +36,7 @@ function reRenderBadges(response) {
   };
   var theCompiledHtml = theTemplate(context);
   $.select('.container')[0].innerHTML += theCompiledHtml;
-};
+}; // end reRenderBadges
 
 var addBadge = function() {
   form = document.forms["add_badge"];
@@ -52,7 +52,7 @@ var addBadge = function() {
     console.log(error);
   });
   return false;
-};
+}; // end addBadge
 
 var getPersonBadges = function() {
   miniQuery.ajax({
@@ -64,4 +64,41 @@ var getPersonBadges = function() {
   }).catch(function(error) {
     console.log(error);
   });
-}
+}; // end getPersonBadges
+
+function addUpVote() {
+  alert("1");
+  form = document.forms["up_vote"];
+  vote_type = "up";
+  badge_id = form.elements["slogan_id"].value;
+  alert("2");
+  $.ajax({
+   url: 'http://localhost:3000/badges/vote',
+   type: 'POST',
+   data: "badge_id=" + badge_id + "&vote_type=" + vote_type
+  }).then(function(response) {
+    alert("3");
+    reRenderBadges(response);
+  }).catch(function(error) {
+    alert("4");
+    console.log(error);
+  });
+  alert("5");
+  return false;
+}; // end addUpVote
+
+function addDownVote() {
+  form = document.forms["down_vote"];
+  vote_type = "down";
+  badge_id = form.elements["slogan_id"].value;
+  $.ajax({
+   url: 'http://localhost:3000/badges/vote',
+   type: 'POST',
+   data: "badge_id=" + badge_id + "&vote_type=" + vote_type
+  }).then(function(response) {
+    reRenderBadges(response);
+  }).catch(function(error) {
+    console.log(error);
+  });
+  return false;
+}; // end addDownVote

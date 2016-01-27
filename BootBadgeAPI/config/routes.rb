@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   post 'badges' => 'badges#index'
   post 'badges/new' => 'badges#create'
+  post 'badges/vote' => 'badges#vote'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
