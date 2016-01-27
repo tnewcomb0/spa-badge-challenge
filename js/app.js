@@ -14,9 +14,6 @@ function reRenderBadges(response) {
 
   // show all the badges
   var allBadges = JSON.parse(response).badges
-  for(var i = 0; i < allBadges.length; i++) {
-    console.log(allBadges[i].id);
-  }
   var up_index = 0;
   var down_index = 1;
   for(var i = 0; i < allBadges.length; i++) {
