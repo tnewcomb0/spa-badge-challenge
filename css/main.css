@@ -1,7 +1,9 @@
 @import url("normalize.css");
 
 body {
-  background-color: #000;
+  background-color: #050000;
+  margin-left: 2.5em;
+  margin-top: 2.5em;
 }
 
 h1, h2, p, div {
@@ -11,24 +13,31 @@ h1, h2, p, div {
 a {
   text-decoration: none;
   color: dodgerblue;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 a:visited {
-  color: purple;
+  color: red;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: orange;
 }
 
 .logo h1 {
-  font-family: 'Courier New', cursive;
   text-align: left;
   padding: 0px 10px;
   margin: 10px 0px 5px 0px;
   font-size: 50px;
   color: firebrick;
+}
+
+.logo a h1 {
+  color: red;
+}
+
+.logo a:hover h1 {
+  color: orange;
 }
 
 .container {
@@ -39,9 +48,13 @@ a:hover {
 }
 
 .container h1 {
-  font-family: 'Courier New', cursive;
+  font-family: 'Trade Winds', cursive;
   padding: 0px 10px;
   margin: 10px 0px 5px 0px;
+}
+
+.container ul {
+  font-family: 'Special Elite', cursive;
 }
 
 th {
@@ -49,7 +62,6 @@ th {
 }
 
 .show-user h1 {
-  font-family: 'Courier New', cursive;
   text-align: left;
   padding: 0px 10px;
   margin: 10px 0px 5px 0px;
@@ -61,12 +73,12 @@ th {
   font-family: 'Oswald', 'sans-serif';
   padding: 0px 20px;
   margin: 5px 0px 10px 0px;
+  text-decoration: underline;
 }
 
 .show-user .padded {
   padding: 3px 30px;
 }
-
 
 /* SLOGAN DISPLAY */
 .slogan-list {
@@ -77,11 +89,15 @@ th {
   padding: 3px 30px;
   width: 600px;
   overflow: hidden;
+  font-family: 'IM Fell DW Pica', serif;
+  background: linear-gradient(to bottom, #131b2b 0%,#0c1121 14%,#00020f 50%,#0c1121 86%,#131b2b 100%);
+  border-bottom: 1px solid #1C0031;
+  border-top: 1px solid #1C0031;
 }
 
 .slogan .body {
-  font-family: 'Oswald', 'sans-serif';
-  font-size: 18px;
+  font-family: 'IM Fell DW Pica', serif;
+  font-size: 21px;
   padding-right:25px;
   float:left;
   font-weight:bold
@@ -114,15 +130,18 @@ th {
   padding: 0px;
 }
 
-.add-badge form{
+.add-badge img{
+  height: 25px;
+  width: 25px;
 }
 
 .add-badge h3{
   display: inline;
-  font-family:'Oswald','sans-serif';
+  font-family: 'Special Elite', cursive;
   font-size:22px;
   float:left;
   margin: 2px 10px 0px 20px;
+  padding-top: 10px;
 }
 
 .submit-slogan-button {
@@ -130,7 +149,7 @@ th {
   max-height:25px;
 }
 
-.add-badge input[type="image"] {
+.add-badge img {
   border: 0;
   width: 25px;
   height: 25px;
@@ -166,6 +185,7 @@ th {
 .nav .nav-link {
   display: inline;
   padding: 10px;
+  font-family: 'Trade Winds', cursive;
 }
 
 .nav .nav-link a {
@@ -180,8 +200,7 @@ th {
 /*show.css*/
 
 .show-user h1 {
-  font-family: 'Black Ops One', cursive;
-  text-align: left;
+  font-family: 'Special Elite', cursive;  text-align: left;
   padding: 0px 10px;
   margin: 10px 0px 5px 0px;
   font-size: 50px;
@@ -189,7 +208,7 @@ th {
 
 .show-user h2 {
   text-align: left;
-  font-family: 'Oswald', 'sans-serif';
+  font-family: 'Special Elite', cursive;
   padding: 0px 20px;
   margin: 5px 0px 10px 0px;
 }
@@ -198,114 +217,5 @@ th {
   padding: 3px 30px;
 }
 
-
-/* SLOGAN DISPLAY */
-.slogan-list {
-  width: 400px;
-}
-
-.slogan {
-  padding: 3px 30px;
-  width: 600px;
-  overflow: hidden;
-}
-
-.slogan .body {
-  font-family: 'Oswald', 'sans-serif';
-  font-size: 18px;
-  padding-right:25px;
-  float:left;
-  font-weight:bold
- }
-
-.vote-on, .vote-off {
-  float:left;
-}
-
-.slogan button {
-  padding:1px;
-  vertical-align:bottom;
-  border: 0;
-  background: transparent;
-  outline: none;
-}
-
-.slogan .points {
-  padding:5px;
-  float:left;
-  font-size:11px;
-}
-
-/* SLOGAN SUBMISSION */
-.add-badge {
-  width:600px;
-  overflow:hidden;
-  margin-top: 5px;
-  clear:right;
-  padding: 0px;
-}
-
-.add-badge form{
-}
-
-.add-badge h3{
-  display: inline;
-  font-family:'Oswald','sans-serif';
-  font-size:22px;
-  float:left;
-  margin: 2px 10px 0px 20px;
-}
-
-.submit-slogan-button {
-  max-width:25px;
-  max-height:25px;
-}
-
-.add-badge input[type="image"] {
-  border: 0;
-  width: 25px;
-  height: 25px;
-  padding-top: 6px;
-  padding-left: 2px;
-  vertical-align: bottom;
-  outline: none;
-}
-
-.add-badge button {
-  padding: 1px;
-  vertical-align:bottom;
-  border: 0;
-  background: transparent;
-}
-
-
-/* NAV */
-.nav {
-  font-family:'Oswald','sans-serif';
-  font-weight: bold;
-  width:100%;
-  display: inline;
-  overflow:hidden;
-  margin-top:10px;
-  margin-left: 10px;
-  font-size:18px;
-  padding:3px;
-  float:left;
-  vertical-align:center;
-}
-
-.nav .nav-link {
-  display: inline;
-  padding: 10px;
-}
-
-.nav .nav-link a {
-  text-decoration: none;
-}
-
-.nav .pipe-separator {
-  display: inline;
-  padding: 3px;
-}
 
 
