@@ -5,7 +5,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
   <script id="header-template" type="text/x-handlebars-template">
     <div class='logo'>
-      <a href="/spa-badge.html"><h1> SPA Badge </h1></a>
+      <a href="/spa-badge.html" onclick="renderIndex(); return false;"><h1> SPA Badge </h1></a>
     </div>
     <h1>Words To Be Remembered By</h1>
     <div class='show-user'>
@@ -50,17 +50,33 @@
     </div>
     <div class="nav">
     <span class="nav-link">
-      <a href="spa-badge.html"> HOME </a>
+      <a href="spa-badge.html" onclick="renderIndex(); return false;"> HOME </a>
     </span>
     </div>
   </script>
+<script id="index-template" type="text/x-handlebars-template">
+  <div class="logo">
+    <a href="/spa-badge.html" onclick="renderIndex(); return false;"><h1> SPA Badge </h1></a>
+  </div>
+  <h1> SF Teachers </h1>
+  <ul>
+    <li><a href="#anne">Anne</a></li>
+    <li><a href="#derek">Derek</a></li>
+    <li><a href="#hunter">Hunter</li>
+    <li><a href="#jen">Jen</a></li>
+    <li><a href="#julian">Julian</a></li>
+    <li><a href="#sarah">Sarah</a></li>
+    <li><a href="#shambhavi">Shambhavi</a></li>
+    <li><a href="#walker">Walker</a></li>
+  </ul>
+</script>
   <script src="js/app.js"></script>
   <title>SPABadge</title>
 </head>
 <body>
   <div class="container">
     <div class="logo">
-      <a href="/spa-badge.html"><h1> SPA Badge </h1></a>
+      <a href="/spa-badge.html" onclick="renderIndex(); return false;"><h1> SPA Badge </h1></a>
     </div>
     <h1> SF Teachers </h1>
       <ul>
@@ -72,7 +88,6 @@
         <li><a href="#sarah">Sarah</a></li>
         <li><a href="#shambhavi">Shambhavi</a></li>
         <li><a href="#walker">Walker</a></li>
-        <li><a href="sample-page.html">Sample Page</a></li>
       </ul>
   </div>
 </body>

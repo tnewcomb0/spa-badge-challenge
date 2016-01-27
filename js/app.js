@@ -47,6 +47,15 @@ function reRenderBadges(response) {
   $.select('.container')[0].innerHTML += theCompiledHtml;
 }; // end reRenderBadges
 
+function renderIndex() {
+  history.pushState("", document.title, window.location.pathname + window.location.search);
+  // show the index list
+  var theTemplateScript = $.select("#index-template").innerHTML;
+  var theTemplate = Handlebars.compile(theTemplateScript);
+  var theCompiledHtml = theTemplate();
+  $.select('.container')[0].innerHTML = theCompiledHtml;
+}; // end renderIndex
+
 var addBadge = function() {
   form = document.forms["add_badge"];
   badge_content = form.elements["content"].value;
