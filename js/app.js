@@ -75,21 +75,40 @@ var getPersonBadges = function() {
   });
 }; // end getPersonBadges
 
+function setCookie(cname, cvalue) {
+  document.cookie = cname + "=" + cvalue + "; ";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0; i<ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0)==' ') c = c.substring(1);
+      if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+  }
+  return "";
+}
+
 function addUpVote(index) {
   form = document.forms[index];
   vote_type = "up";
   badge_id = form.elements["slogan_id"].value;
-  console.log("up badge_id: " + form.elements["slogan_id"].value);
-  console.log("up index: " + index);
-  $.ajax({
-   url: 'http://localhost:3000/badges/vote',
-   type: 'POST',
-   data: "badge_id=" + badge_id + "&vote_type=" + vote_type
-  }).then(function(response) {
-    reRenderBadges(response);
-  }).catch(function(error) {
-    console.log(error);
-  });
+  if (getCookie(("badge_" + badge_id)) == "true") {
+    alert("You already voted!");
+  }
+  else {
+    $.ajax({
+     url: 'http://localhost:3000/badges/vote',
+     type: 'POST',
+     data: "badge_id=" + badge_id + "&vote_type=" + vote_type
+    }).then(function(response) {
+      setCookie(("badge_" + badge_id), true);
+      reRenderBadges(response);
+    }).catch(function(error) {
+      console.log(error);
+    });
+  }
   return false;
 }; // end addUpVote
 
@@ -97,16 +116,20 @@ function addDownVote(index) {
   form = document.forms[index];
   vote_type = "down";
   badge_id = form.elements["slogan_id"].value;
-  console.log("down badge_id: " + badge_id);
-  console.log("down index: " + index);
-  $.ajax({
-   url: 'http://localhost:3000/badges/vote',
-   type: 'POST',
-   data: "badge_id=" + badge_id + "&vote_type=" + vote_type
-  }).then(function(response) {
-    reRenderBadges(response);
-  }).catch(function(error) {
-    console.log(error);
-  });
+  if (getCookie(("badge_" + badge_id)) == "true") {
+    alert("You already voted!");
+  }
+  else {
+    $.ajax({
+     url: 'http://localhost:3000/badges/vote',
+     type: 'POST',
+     data: "badge_id=" + badge_id + "&vote_type=" + vote_type
+    }).then(function(response) {
+      setCookie(("badge_" + badge_id), true);
+      reRenderBadges(response);
+    }).catch(function(error) {
+      console.log(error);
+    });
+  }
   return false;
 }; // end addDownVote
