@@ -6,6 +6,9 @@ class BadgesController < ApplicationController
   end
 
   def create
+    person = Person.find(params[:person_id])
+    person.badges.create(title: params[:badge], person_id: params[:person_id], points: 0)
+    render :json => person, :include => :badges
   end
 
   def update

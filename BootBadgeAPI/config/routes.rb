@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # resources :badges, except: [:new, :edit]
 
   post 'badges' => 'badges#index'
+  post 'badges/new' => 'badges#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

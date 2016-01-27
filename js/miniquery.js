@@ -85,7 +85,7 @@ var miniQuery;
       oRequest.open(request.type, request.url)
       if (request.data) {
         oRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        oRequest.send("person=" + request.data);
+        oRequest.send(request.data);
       } else {
         oRequest.send();
       }

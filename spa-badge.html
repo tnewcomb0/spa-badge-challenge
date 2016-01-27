@@ -5,14 +5,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
   <script id="header-template" type="text/x-handlebars-template">
     <div class='logo'>
-      <h1> SPA Badge </h1>
+      <a href="/spa-badge.html"><h1> SPA Badge </h1></a>
     </div>
     <h1>Words To Be Remembered By</h1>
     <div class='show-user'>
       <h2> {{name}}'s Badges </h2>
   </script>
   <script id="badge-template" type="text/x-handlebars-template">
-    <div id="1" class="slogan">
+    <div id="{{badge_id}}" class="slogan">
       <div class="body">{{index}}) {{title}}</div>
       <div class="vote-on">
         <form action="#">
@@ -41,15 +41,13 @@
   <script id="badge-add-template" type="text/x-handlebars-template">
     <div class="add-badge">
       <h3> Add a Badge: </h3>
-      <form action="#">
-        <input type="hidden" name="user_id" value="5" />
+      <form id="add_badge" onsubmit="return addBadge()">
+        <input type="hidden" name="user_id" value="{{user_id}}" />
         <input type="text" name="content" />
-        <input type="image" src="img/add_button.png" alt="Add Slogan" />
+        <button type="submit"><img src="img/add_button.png" alt="Add Slogan" /></button>
       </form>
     </div>
-
     </div>
-
     <div class="nav">
     <span class="nav-link">
       <a href="spa-badge.html"> HOME </a>
@@ -62,7 +60,7 @@
 <body>
   <div class="container">
     <div class="logo">
-      <h1> SPA Badge </h1>
+      <a href="/spa-badge.html"><h1> SPA Badge </h1></a>
     </div>
     <h1> SF Teachers </h1>
       <ul>
